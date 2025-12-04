@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Finecountry-Okezie Victor - CV</title>
+    <title>Victor Finecountry-Okezie - CV</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Crimson+Pro:wght@600;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -16,229 +16,320 @@
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            background: linear-gradient(135deg, #1e3a5f 0%, #2c5282 100%);
-            padding: 20px 10px;
-            color: #2d3748;
+            background: white;
+            color: #1a202c;
+            line-height: 1.6;
         }
 
         .container {
-            max-width: 900px;
+            max-width: 1200px;
             margin: 0 auto;
-            background: white;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-            border-radius: 12px;
-            overflow: hidden;
         }
 
         .header {
-            background: linear-gradient(135deg, #1e3a5f 0%, #2c5282 100%);
-            color: white;
-            padding: 30px 40px;
+            background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+            padding: 50px 60px;
             position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            transform: translate(30%, -30%);
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
         }
 
         .header h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 32px;
+            font-family: 'Crimson Pro', serif;
+            font-size: 48px;
             font-weight: 700;
-            margin-bottom: 6px;
-            letter-spacing: -0.5px;
+            color: white;
+            margin-bottom: 8px;
+            letter-spacing: -1px;
         }
 
-        .header .title {
-            font-size: 15px;
-            opacity: 0.95;
-            margin-bottom: 15px;
+        .header .tagline {
+            font-size: 18px;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 30px;
             font-weight: 300;
+            letter-spacing: 0.3px;
         }
 
-        .contact-info {
-            display: flex;
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
-            flex-wrap: wrap;
-            font-size: 13px;
+            color: white;
+            font-size: 14px;
         }
 
         .contact-item {
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 12px;
+            padding: 12px 20px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 8px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
         }
 
-        .content {
-            padding: 30px 40px;
+        .contact-label {
+            font-weight: 600;
+            opacity: 0.8;
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 50px;
+            padding: 50px 60px;
+        }
+
+        .left-column {
+            padding-right: 30px;
+        }
+
+        .right-column {
+            border-left: 2px solid #e2e8f0;
+            padding-left: 40px;
         }
 
         .section {
-            margin-bottom: 25px;
+            margin-bottom: 45px;
         }
 
         .section-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 19px;
+            font-family: 'Crimson Pro', serif;
+            font-size: 26px;
             font-weight: 700;
-            color: #2c5282;
-            margin-bottom: 12px;
-            padding-bottom: 6px;
-            border-bottom: 3px solid #2c5282;
-            display: inline-block;
+            color: #0f2027;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 12px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #2c5364 0%, #203a43 100%);
         }
 
         .summary {
-            line-height: 1.6;
+            font-size: 15px;
+            line-height: 1.8;
             color: #4a5568;
-            font-size: 13px;
+            text-align: justify;
         }
 
-        .education-item, .experience-item, .project-item, .leadership-item {
-            margin-bottom: 18px;
+        .item {
+            margin-bottom: 30px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .item:last-child {
+            border-bottom: none;
         }
 
         .item-header {
             display: flex;
             justify-content: space-between;
             align-items: baseline;
-            margin-bottom: 6px;
-            flex-wrap: wrap;
-        }
-
-        .item-title {
-            font-size: 15px;
-            font-weight: 700;
-            color: #2d3748;
-        }
-
-        .item-subtitle {
-            font-style: italic;
-            color: #718096;
-            margin-bottom: 4px;
-            font-size: 12px;
-        }
-
-        .item-date {
-            color: #2c5282;
-            font-weight: 600;
-            font-size: 12px;
-        }
-
-        .gpa-box {
-            background: linear-gradient(135deg, #e6f2ff 0%, #d4e6f5 100%);
-            padding: 15px;
-            border-radius: 8px;
-            margin-top: 10px;
-            border-left: 4px solid #2c5282;
-        }
-
-        .gpa-main {
-            font-size: 18px;
-            font-weight: 700;
-            color: #2c5282;
             margin-bottom: 8px;
         }
 
-        .gpa-details {
+        .item-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #1a202c;
+        }
+
+        .item-company {
+            font-size: 15px;
+            color: #2c5364;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .item-date {
+            font-size: 13px;
+            color: #718096;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .item-link {
+            color: #2c5364;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            margin-top: 4px;
+            transition: color 0.3s;
+        }
+
+        .item-link:hover {
+            color: #203a43;
+        }
+
+        .gpa-showcase {
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+            padding: 25px;
+            border-radius: 12px;
+            margin: 20px 0;
+            border: 2px solid #e2e8f0;
+        }
+
+        .gpa-main {
+            font-size: 32px;
+            font-weight: 800;
+            color: #2c5364;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .gpa-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 8px;
-            font-size: 12px;
-            color: #4a5568;
+            gap: 12px;
         }
-        
+
         .gpa-item {
             background: white;
-            padding: 8px 12px;
-            border-radius: 6px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            padding: 12px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
         }
-        
-        .gpa-item span:first-child {
+
+        .gpa-item-label {
+            font-size: 11px;
             color: #718096;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
-        
-        .gpa-item strong {
-            color: #2c5282;
-            font-size: 14px;
+
+        .gpa-item-value {
+            font-size: 24px;
+            font-weight: 700;
+            color: #2c5364;
+            margin-top: 4px;
         }
 
         ul {
             list-style: none;
-            padding-left: 0;
+            padding: 0;
+            margin-top: 12px;
         }
 
         ul li {
-            padding-left: 20px;
-            margin-bottom: 6px;
+            padding-left: 24px;
+            margin-bottom: 8px;
             position: relative;
-            line-height: 1.5;
+            font-size: 14px;
+            line-height: 1.7;
             color: #4a5568;
-            font-size: 12px;
         }
 
-        ul li:before {
-            content: "▹";
+        ul li::before {
+            content: '→';
             position: absolute;
             left: 0;
-            color: #2c5282;
-            font-weight: bold;
-            font-size: 18px;
+            color: #2c5364;
+            font-weight: 700;
+            font-size: 16px;
         }
 
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 12px;
+        .tech-stack {
+            margin-top: 8px;
+            font-weight: 600;
+            color: #1a202c;
+            font-size: 13px;
         }
 
-        .skill-category {
+        .skills-section {
             background: #f7fafc;
-            padding: 12px;
-            border-radius: 8px;
-            border-left: 3px solid #2c5282;
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 30px;
         }
 
-        .skill-category strong {
-            color: #2d3748;
-            display: block;
-            margin-bottom: 6px;
-            font-size: 12px;
+        .skill-group {
+            margin-bottom: 20px;
         }
 
-        .skill-category span {
+        .skill-group:last-child {
+            margin-bottom: 0;
+        }
+
+        .skill-title {
+            font-size: 13px;
+            font-weight: 700;
+            color: #1a202c;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .skill-list {
+            font-size: 13px;
+            line-height: 1.8;
             color: #4a5568;
-            font-size: 11px;
-            line-height: 1.5;
         }
 
-        .certification-box {
-            background: #f7fafc;
-            padding: 15px;
-            border-radius: 8px;
-            border-left: 4px solid #1e3a5f;
+        .cert-box {
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+            padding: 25px;
+            border-radius: 12px;
+            border-left: 4px solid #2c5364;
         }
 
         .cert-title {
+            font-size: 16px;
             font-weight: 700;
-            color: #2d3748;
-            margin-bottom: 6px;
-            font-size: 14px;
+            color: #1a202c;
+            margin-bottom: 8px;
+        }
+
+        .cert-date {
+            font-size: 12px;
+            color: #718096;
+            font-weight: 600;
+            margin-bottom: 12px;
         }
 
         .cert-description {
+            font-size: 13px;
+            line-height: 1.7;
             color: #4a5568;
-            line-height: 1.5;
-            margin-bottom: 8px;
-            font-size: 12px;
+            margin-bottom: 12px;
         }
 
         .cert-link {
-            display: inline-block;
-            color: #2c5282;
+            color: #2c5364;
             text-decoration: none;
+            font-size: 13px;
             font-weight: 600;
-            font-size: 12px;
-            margin-top: 4px;
         }
 
         .cert-link:hover {
@@ -246,62 +337,64 @@
         }
 
         .cert-skills {
-            margin-top: 8px;
-            font-size: 11px;
+            margin-top: 12px;
+            font-size: 12px;
             color: #718096;
+            line-height: 1.6;
         }
 
-        .links {
+        .links-section {
             display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
+            flex-direction: column;
+            gap: 12px;
         }
 
         .link-item {
-            color: #2c5282;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 13px;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 12px;
+            padding: 12px 16px;
+            background: #f7fafc;
+            border-radius: 8px;
+            text-decoration: none;
+            color: #2c5364;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s;
+            border: 1px solid #e2e8f0;
         }
 
         .link-item:hover {
-            text-decoration: underline;
-        }
-
-        .project-link {
-            color: #2c5282;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 12px;
-        }
-
-        .project-link:hover {
-            text-decoration: underline;
+            background: #edf2f7;
+            transform: translateX(4px);
         }
 
         @media print {
             body {
                 background: white;
-                padding: 0;
             }
-            .container {
-                box-shadow: none;
-                max-width: 100%;
+            .header::before {
+                display: none;
+            }
+            .main-content {
+                gap: 30px;
+                padding: 30px 40px;
             }
         }
 
-        @media (max-width: 768px) {
-            .header, .content {
-                padding: 30px;
+        @media (max-width: 968px) {
+            .main-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .right-column {
+                border-left: none;
+                border-top: 2px solid #e2e8f0;
+                padding-left: 0;
+                padding-top: 30px;
             }
             .header h1 {
-                font-size: 32px;
-            }
-            .contact-info {
-                gap: 15px;
+                font-size: 36px;
             }
         }
     </style>
@@ -309,208 +402,219 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>VICTOR FINECOUNTRY-OKEZIE</h1>
-            <div class="title">300-Level Computer Science Student | Full-Stack Developer | GDG Babcock Team Lead</div>
-            <div class="contact-info">
-                <div class="contact-item">
-                    <span>Email:</span>
-                    <span>vfokezie@gmail.com</span>
-                </div>
-                <div class="contact-item">
-                    <span>Phone:</span>
-                    <span>+234 816 694 8210</span>
-                </div>
-                <div class="contact-item">
-                    <span>University:</span>
-                    <span>Babcock University, Nigeria</span>
+            <div class="header-content">
+                <h1>VICTOR FINECOUNTRY-OKEZIE</h1>
+                <div class="tagline">Computer Science Student · Full-Stack Developer · Team Lead</div>
+                <div class="contact-grid">
+                    <div class="contact-item">
+                        <span class="contact-label">Email</span>
+                        <span>vfokezie@gmail.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-label">Phone</span>
+                        <span>+234 816 694 8210</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-label">University</span>
+                        <span>Babcock University</span>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <div class="content">
-            <div class="section">
-                <h2 class="section-title">Professional Summary</h2>
-                <p class="summary">
-                    Motivated and passionate Computer Science student with a focus on full-stack development and data analytics. Skilled in building responsive and scalable web applications using the MERN stack and modern UI frameworks. Proven experience leading technical projects and collaborating in team environments. Team Lead at Google Developer Groups Babcock and Lead Developer for AgroLink, presented at Babcock's Entrepreneurship event. Eager to learn, grow, and contribute meaningfully to impactful technology solutions.
-                </p>
-            </div>
-
-            <div class="section">
-                <h2 class="section-title">Education</h2>
-                <div class="education-item">
-                    <div class="item-header">
-                        <div>
-                            <div class="item-title">Bachelor of Science in Computer Science</div>
-                            <div class="item-subtitle">Babcock University, Ogun State, Nigeria</div>
-                        </div>
-                        <div class="item-date">Expected: July 2027</div>
-                    </div>
-                    <div class="gpa-box">
-                        <div class="gpa-main">Cumulative GPA: 4.49/5.00</div>
-                        <div class="gpa-details">
-                            <div class="gpa-item">
-                                <span>100 Level Sem 1</span>
-                                <strong>4.12</strong>
-                            </div>
-                            <div class="gpa-item">
-                                <span>100 Level Sem 2</span>
-                                <strong>4.05</strong>
-                            </div>
-                            <div class="gpa-item">
-                                <span>200 Level Sem 1</span>
-                                <strong>4.84</strong>
-                            </div>
-                            <div class="gpa-item">
-                                <span>200 Level Sem 2</span>
-                                <strong>4.90</strong>
-                            </div>
-                        </div>
-                    </div>
-                    <p style="margin-top: 10px; color: #4a5568; font-size: 12px;">
-                        <strong>Relevant Courses:</strong> Data Structures, System Design, C++, Java
+        <div class="main-content">
+            <div class="left-column">
+                <div class="section">
+                    <h2 class="section-title">Professional Summary</h2>
+                    <p class="summary">
+                        Motivated and passionate Computer Science student with a focus on full-stack development and data analytics. Skilled in building responsive and scalable web applications using the MERN stack and modern UI frameworks. Proven experience leading technical projects and collaborating in team environments. Team Lead at Google Developer Groups Babcock and Lead Developer for AgroLink, presented at Babcock's Entrepreneurship event. Eager to learn, grow, and contribute meaningfully to impactful technology solutions.
                     </p>
                 </div>
-            </div>
 
-            <div class="section">
-                <h2 class="section-title">Work Experience</h2>
-                <div class="experience-item">
-                    <div class="item-header">
-                        <div class="item-title">Freelance Full-Stack Developer</div>
-                        <div class="item-date">2022 - Present</div>
+                <div class="section">
+                    <h2 class="section-title">Education</h2>
+                    <div class="item">
+                        <div class="item-header">
+                            <div>
+                                <div class="item-title">Bachelor of Science in Computer Science</div>
+                                <div class="item-company">Babcock University, Ogun State, Nigeria</div>
+                            </div>
+                            <div class="item-date">Expected: July 2027</div>
+                        </div>
+                        <div class="gpa-showcase">
+                            <div class="gpa-main">4.49 / 5.00</div>
+                            <div class="gpa-grid">
+                                <div class="gpa-item">
+                                    <div class="gpa-item-label">100L Sem 1</div>
+                                    <div class="gpa-item-value">4.12</div>
+                                </div>
+                                <div class="gpa-item">
+                                    <div class="gpa-item-label">100L Sem 2</div>
+                                    <div class="gpa-item-value">4.05</div>
+                                </div>
+                                <div class="gpa-item">
+                                    <div class="gpa-item-label">200L Sem 1</div>
+                                    <div class="gpa-item-value">4.84</div>
+                                </div>
+                                <div class="gpa-item">
+                                    <div class="gpa-item-label">200L Sem 2</div>
+                                    <div class="gpa-item-value">4.90</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="margin-top: 15px; font-size: 13px; color: #4a5568;">
+                            <strong>Relevant Courses:</strong> Data Structures, System Design, C++, Java
+                        </div>
                     </div>
-                    <div class="item-subtitle">Remote</div>
-                    <ul>
-                        <li>Built and deployed full-stack applications for various clients using MERN stack (MongoDB, Express.js, React, Node.js)</li>
-                        <li>Implemented responsive UIs with Bootstrap, TailwindCSS, and modern CSS frameworks</li>
-                        <li>Integrated Firebase for authentication and cloud storage in client projects</li>
-                        <li>Developed dashboards with data analytics features using Chart.js and D3.js</li>
-                    </ul>
+                </div>
+
+                <div class="section">
+                    <h2 class="section-title">Work Experience</h2>
+                    <div class="item">
+                        <div class="item-header">
+                            <div>
+                                <div class="item-title">Freelance Full-Stack Developer</div>
+                                <div class="item-company">Remote</div>
+                            </div>
+                            <div class="item-date">2022 - Present</div>
+                        </div>
+                        <ul>
+                            <li>Built and deployed full-stack applications for various clients using MERN stack (MongoDB, Express.js, React, Node.js)</li>
+                            <li>Implemented responsive UIs with Bootstrap, TailwindCSS, and modern CSS frameworks</li>
+                            <li>Integrated Firebase for authentication and cloud storage in client projects</li>
+                            <li>Developed dashboards with data analytics features using Chart.js and D3.js</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2 class="section-title">Key Projects</h2>
+                    
+                    <div class="item">
+                        <div class="item-header">
+                            <div>
+                                <div class="item-title">TaxPro Solutions</div>
+                                <a href="https://taxpro-kappa.vercel.app/" target="_blank" class="item-link">View Live →</a>
+                            </div>
+                            <div class="item-date">2024 - 2025</div>
+                        </div>
+                        <ul>
+                            <li>Developed comprehensive SME tax compliance platform with automated Nigerian tax calculations (CITA, PITA, VAT, WHT, PAYE) following FIRS regulations</li>
+                            <li>Built real-time tax deadline tracking system with automated email reminders using Node-Cron and Nodemailer</li>
+                            <li>Implemented secure user authentication with JWT, role-based financial data management, and subscription-based tax type tracking</li>
+                            <li>Created intelligent tax calculator with support for progressive tax brackets and business size classification</li>
+                        </ul>
+                        <div class="tech-stack">Stack: React, Node.js, Express.js, MongoDB, Mongoose, JWT, Nodemailer, Node-Cron</div>
+                    </div>
+
+                    <div class="item">
+                        <div class="item-header">
+                            <div>
+                                <div class="item-title">FYN3 E-Commerce Platform</div>
+                                <a href="https://ecom-prod-frontend.vercel.app/" target="_blank" class="item-link">View Live →</a>
+                            </div>
+                            <div class="item-date">2024</div>
+                        </div>
+                        <ul>
+                            <li>Designed and developed fully responsive e-commerce platform with modern UI</li>
+                            <li>Implemented dynamic product listings, advanced filtering, and real-time shopping cart management</li>
+                            <li>Integrated secure authentication, payment handling via Stripe and Paystack, and order history using JWT</li>
+                        </ul>
+                        <div class="tech-stack">Stack: React, Node.js, Express.js, MongoDB, Tailwind CSS</div>
+                    </div>
+
+                    <div class="item">
+                        <div class="item-header">
+                            <div>
+                                <div class="item-title">AgroLink</div>
+                                <div class="item-company">Team Lead & Lead Developer</div>
+                            </div>
+                            <div class="item-date">2024</div>
+                        </div>
+                        <ul>
+                            <li>Led development and presented at Babcock University Entrepreneurship Event</li>
+                            <li>Built platform connecting farmers with buyers through request and listing system</li>
+                            <li>Implemented user access roles, secure authentication, and comprehensive catalog system</li>
+                        </ul>
+                        <div class="tech-stack">Stack: HTML, CSS, JavaScript, Firebase, Bootstrap</div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2 class="section-title">Leadership</h2>
+                    
+                    <div class="item">
+                        <div class="item-header">
+                            <div>
+                                <div class="item-title">Team Lead - Google Developer Groups</div>
+                                <div class="item-company">Babcock University</div>
+                            </div>
+                            <div class="item-date">2024 - Present</div>
+                        </div>
+                        <ul>
+                            <li>Coordinated workshops, coding events, and mentoring sessions for student developers</li>
+                            <li>Led development of BG Remover Tool, an AI-powered web app for image background removal</li>
+                            <li>Built application using MERN stack, Tailwind CSS, and Canvas API with drag-and-drop functionality</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
 
-            <div class="section">
-                <h2 class="section-title">Key Projects</h2>
-                
-                <div class="project-item">
-                    <div class="item-header">
-                        <div class="item-title">FYN3 E-Commerce Platform</div>
-                        <div class="item-date">2024</div>
-                    </div>
-                    <div class="item-subtitle">
-                        <a href="https://ecom-prod-frontend.vercel.app/" target="_blank" class="project-link">View Live Website →</a>
-                    </div>
-                    <ul>
-                        <li>Designed and developed a fully responsive e-commerce platform with a clean, modern UI</li>
-                        <li>Implemented dynamic product listings, advanced filtering (by category, price, and rating), and real-time shopping cart with quantity management</li>
-                        <li>Integrated secure user authentication, payment handling via Stripe and Paystack, and order history using JWT</li>
-                        <li>Ensured seamless checkout experience and optimized loading performance across devices</li>
-                        <li><strong>Tech Stack:</strong> React, Node.js, Express.js, MongoDB, Tailwind CSS</li>
-                    </ul>
-                </div>
-
-                <div class="project-item">
-                    <div class="item-header">
-                        <div class="item-title">AgroLink</div>
-                        <div class="item-date">2024</div>
-                    </div>
-                    <div class="item-subtitle">Agro-Commerce Platform | Team Lead & Lead Developer</div>
-                    <ul>
-                        <li>Led development and presented project at Babcock University Entrepreneurship Event</li>
-                        <li>Built platform connecting farmers with buyers through request and listing system</li>
-                        <li>Implemented user access roles, secure authentication, and comprehensive catalog system</li>
-                        <li><strong>Tech Stack:</strong> HTML, CSS, JavaScript, Firebase, Bootstrap</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="section">
-                <h2 class="section-title">Leadership & Community Involvement</h2>
-                
-                <div class="leadership-item">
-                    <div class="item-header">
-                        <div class="item-title">Team Lead - Google Developer Groups (GDG)</div>
-                        <div class="item-date">2024 - Present</div>
-                    </div>
-                    <div class="item-subtitle">Babcock University</div>
-                    <ul>
-                        <li>Coordinated workshops, coding events, and mentoring sessions for student developers</li>
-                        <li>Led development of BG Remover Tool, an AI-powered web app for image background removal</li>
-                        <li>Built application using MERN stack, Tailwind CSS, and Canvas API with drag-and-drop uploads, previews, and downloadable results</li>
-                        <li>Integrated asynchronous backend for efficient image processing and user file handling</li>
-                    </ul>
-                </div>
-
-                <div class="leadership-item">
-                    <div class="item-header">
-                        <div class="item-title">Lead Developer - AgroLink Project</div>
-                        <div class="item-date">2024</div>
-                    </div>
-                    <div class="item-subtitle">Babcock University Entrepreneurship Pitch Event</div>
-                    <ul>
-                        <li>Spearheaded end-to-end development including project planning, UI/UX design, database architecture, and deployment</li>
-                        <li>Collaborated with cross-functional team to design platform connecting local farmers with buyers and logistics providers</li>
-                        <li>Delivered live product demo and pitch, earning top commendations from faculty and peers for innovation and technical execution</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="section">
-                <h2 class="section-title">Technical Skills</h2>
-                <div class="skills-grid">
-                    <div class="skill-category">
-                        <strong>Languages & Tools</strong>
-                        <span>HTML, CSS, JavaScript, C++, Firebase, MongoDB, SQL, Git, React</span>
-                    </div>
-                    <div class="skill-category">
-                        <strong>Frameworks & Libraries</strong>
-                        <span>React, Bootstrap, Express.js, Node.js, TailwindCSS</span>
-                    </div>
-                    <div class="skill-category">
-                        <strong>Data Analysis</strong>
-                        <span>Python (pandas, numpy), Microsoft Excel, Google Colab</span>
-                    </div>
-                    <div class="skill-category">
-                        <strong>Design & UI</strong>
-                        <span>Canva, Figma, Draw.io</span>
-                    </div>
-                    <div class="skill-category">
-                        <strong>Other Technologies</strong>
-                        <span>GitHub, Version Control, REST APIs</span>
+            <div class="right-column">
+                <div class="section">
+                    <h2 class="section-title">Technical Skills</h2>
+                    <div class="skills-section">
+                        <div class="skill-group">
+                            <div class="skill-title">Languages & Tools</div>
+                            <div class="skill-list">HTML, CSS, JavaScript, C++, Firebase, MongoDB, SQL, Git, React</div>
+                        </div>
+                        <div class="skill-group">
+                            <div class="skill-title">Frameworks</div>
+                            <div class="skill-list">React, Bootstrap, Express.js, Node.js, TailwindCSS</div>
+                        </div>
+                        <div class="skill-group">
+                            <div class="skill-title">Data Analysis</div>
+                            <div class="skill-list">Python (pandas, numpy), Excel, Google Colab</div>
+                        </div>
+                        <div class="skill-group">
+                            <div class="skill-title">Design & UI</div>
+                            <div class="skill-list">Canva, Figma, Draw.io</div>
+                        </div>
+                        <div class="skill-group">
+                            <div class="skill-title">Other</div>
+                            <div class="skill-list">GitHub, Version Control, REST APIs</div>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="section">
-                <h2 class="section-title">Certifications</h2>
-                <div class="certification-box">
-                    <div class="cert-title">KPMG Data Analytics Consulting Job Simulation on Forage</div>
-                    <div class="item-date" style="margin-bottom: 10px;">March 2025</div>
-                    <div class="cert-description">
-                        Completed a virtual experience simulating tasks performed by KPMG's data analytics team. Assessed data quality, performed analytical procedures, and developed audit deliverables. Utilized Excel and data visualization tools to support audit planning and provide client-ready insights.
-                    </div>
-                    <a href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/dqdMvpBtAYYtbbNge/G7BF7EPuCNecw3Bb3_dqdMvpBtAYYtbbNge_cjrzfptHauNLAkyHY_1746824371330_completion_certificate.pdf" target="_blank" class="cert-link">View Certificate →</a>
-                    <div class="cert-skills">
-                        <strong>Skills:</strong> Critical Thinking, Problem Solving, Audit Deliverables, Excel, Audit Planning, Data Visualization, Analytical Procedures
+                <div class="section">
+                    <h2 class="section-title">Certifications</h2>
+                    <div class="cert-box">
+                        <div class="cert-title">KPMG Data Analytics Consulting</div>
+                        <div class="cert-date">March 2025 · Forage</div>
+                        <div class="cert-description">
+                            Completed virtual experience simulating KPMG's data analytics team tasks. Assessed data quality, performed analytical procedures, and developed audit deliverables.
+                        </div>
+                        <a href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/dqdMvpBtAYYtbbNge/G7BF7EPuCNecw3Bb3_dqdMvpBtAYYtbbNge_cjrzfptHauNLAkyHY_1746824371330_completion_certificate.pdf" target="_blank" class="cert-link">View Certificate →</a>
+                        <div class="cert-skills">
+                            <strong>Skills:</strong> Critical Thinking, Problem Solving, Excel, Data Visualization, Analytical Procedures
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="section">
-                <h2 class="section-title">Links</h2>
-                <div class="links">
-                    <a href="https://github.com/VICKYFYN3" target="_blank" class="link-item">
-                        <span>GitHub:</span>
-                        <span>github.com/VICKYFYN3</span>
-                    </a>
-                    <a href="https://www.linkedin.com/in/victor-finecountry-7b26bb324/" target="_blank" class="link-item">
-                        <span>LinkedIn:</span>
-                        <span>linkedin.com/in/victor-finecountry-7b26bb324</span>
-                    </a>
+                <div class="section">
+                    <h2 class="section-title">Links</h2>
+                    <div class="links-section">
+                        <a href="https://github.com/VICKYFYN3" target="_blank" class="link-item">
+                            <span>GitHub</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/victor-finecountry-7b26bb324/" target="_blank" class="link-item">
+                            <span>LinkedIn</span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </body>
-
 </html>
